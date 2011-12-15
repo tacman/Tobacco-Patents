@@ -1,0 +1,90 @@
+Patent:
+  type: entity
+  table: patent
+  fields:
+    patentId:
+      id: true
+      type: smallint
+      nullable: false
+      column: patent_id
+      generator:
+        strategy: IDENTITY
+    manufacturer:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    brand:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    title:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    patentNumber:
+      type: string
+      length: 32
+      fixed: false
+      nullable: false
+      column: patent_number
+    applicationNumber:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: application_number
+    inventor:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    assignee:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    abstract:
+      type: text
+      nullable: false
+    googleUrl:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: google_url
+    patentOfficeUrl:
+      type: text
+      nullable: false
+      column: patent_office_url
+    patentDate:
+      type: date
+      nullable: false
+      column: patent_date
+    dateFiled:
+      type: date
+      nullable: false
+      column: date_filed
+    terms:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    europeanUrl:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: european_url
+    dateUpdated:
+      type: date
+      nullable: false
+      column: date_updated
+    tags:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

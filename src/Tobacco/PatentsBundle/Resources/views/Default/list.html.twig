@@ -1,0 +1,12 @@
+Welcome to Tobacco Patents.
+
+<h3>List</h3>
+
+{% for p in patents %}
+<li>{{ p.title }} / {{ p.tags }}
+{% endfor %}
+
+<form action='{{ path('_patent_search') }}'>
+Search for: <input size='80'>
+<input type='submit' value='Search'>
+</form>
