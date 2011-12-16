@@ -16,7 +16,7 @@ This recipe shows the steps to convert a simple database to a Symfony2+Doctrine 
 2) Dependencies and Installation
 ---------------
 
-There are no additional bundles or dependencies in this recipe.  Copy parameters.ini.dist 
+There are no additional bundles or dependencies in this recipe.  Copy parameters.ini.dist
 in /app/config to parameters.ini, and set up the database.
 
 ### a) Install the Vendor Libraries
@@ -27,12 +27,12 @@ in /app/config to parameters.ini, and set up the database.
 
 Add the following to your httpd.conf file (or however you set up sites in Apache)
 
-    <VirtualHost *:80> 
+    <VirtualHost *:80>
     ServerName patents
     ServerAlias patents.localsite.us
     DocumentRoot /usr/sites/sf/patents/web
     </VirtualHost>
-    
+
 
 Restart Apache
 
@@ -60,10 +60,21 @@ To see a real-live Symfony page in action, access the following page:
 
 * php app/console bundle:generate --namespace=Survos/PatentsBundle
 
-* delete the ``src/Acme`` directory;
-* remove the routing entries referencing AcmeBundle in ``app/config/routing_dev.yml``;
-* remove the AcmeBundle from the registered bundles in ``app/AppKernel.php``;
+4) Create the Entities
 
+* php app/console doctrine:mapping:convert yml ./src/Tobacco/PatentsBundle/Resources/config/doctrine/metadata/orm --from-database --force
+* php app/console doctrine:mapping:import TobaccoPatentsBundle annotation
+* php app/console doctrine:generate:entities TobaccoPatentsBundle
+
+5) Associate the Entity with a repository by adding @ORM\Entity to
+
+ #/app/src/Survos/Tobacco/PatentsBundle/Entity/Patent.php
+ * @ORM\Table(name="patent")
+ * @ORM\Entity(repositoryClass="Tobacco\PatentsBundle\Entity\Repository\PatentRepository")
+
+5) Create the Controllers and Views
+
+ # app/src/Survos/PatentBundle/Controllers/ListController.php
 
 
 Enjoy!
