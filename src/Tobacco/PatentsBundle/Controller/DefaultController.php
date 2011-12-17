@@ -5,6 +5,7 @@ namespace Tobacco\PatentsBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Tobacco\PatpropBundle\Model\PatentQuery;
 
 class DefaultController extends Controller
 {
@@ -64,4 +65,15 @@ class DefaultController extends Controller
         ->getEntityManager()
         ->getRepository('TobaccoPatentsBundle:Patent');
     }
+    
+    
+    /**
+     * @Route("/list_propel")
+     */
+    public function list_propelAction($tags='')
+    {
+    	  $patents = PatentQuery::create()->find();
+    	  return $this->render('TobaccoPatentsBundle:Default:list.html.twig', array('patents' => $patents));
+    }
+
 }

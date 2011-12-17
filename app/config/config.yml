@@ -12,8 +12,8 @@ framework:
     csrf_protection: true
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    default_locale:  %locale%
     session:
-        default_locale: %locale%
         auto_start:     true
 
 # Twig Configuration
@@ -47,6 +47,37 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
+
+# Propel Configuration
+propel:
+    path:       "%kernel.root_dir%/../vendor/propel"
+    phing_path: "%kernel.root_dir%/../vendor/phing"
+    logging:    %kernel.debug%
+    build_properties:
+        # MySQL specific
+        # propel.mysql.tableType:       InnoDB
+
+    dbal:
+#        driver:               mysql
+#        user:                 %database_user%
+#        password:             %database_password%
+#        dsn:                  mysql:host=%database_host%;dbname=%database_name%;charset=UTF8
+#        options:              {}
+#        attributes:           {}
+        default_connection:       default
+        connections:
+           default:
+               driver:             mysql
+               user:               %database_user%
+               password:           %database_password%
+               dsn:                mysql:host=%database_host%;dbname=%database_name%
+#               options:
+#                   ATTR_PERSISTENT: false
+#               attributes:
+#                   ATTR_EMULATE_PREPARES: true
+#               settings:
+#                   charset:        { value: UTF8 }
+#                   queries:        { query: 'INSERT INTO BAR ('hey', 'there')' }
 
 # Swiftmailer Configuration
 swiftmailer:

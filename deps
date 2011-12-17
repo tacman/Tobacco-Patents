@@ -1,6 +1,6 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.7
+#    version=v2.0.7
 
 [twig]
     git=http://github.com/fabpot/Twig.git
@@ -12,15 +12,15 @@
 
 [doctrine-common]
     git=http://github.com/doctrine/common.git
-    version=2.1.4
+ #   version=2.1.4
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
-    version=2.1.5
+#   version=2.1.5
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=2.1.4
+#    version=2.1.4
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
@@ -64,11 +64,16 @@
 [propel]
     git=https://github.com/propelorm/Propel.git
     target=/propel
-    version=1.6.3
+#    version=1.6.3
 
 [PropelBundle]
     git=https://github.com/propelorm/PropelBundle.git
     target=/bundles/Propel/PropelBundle
+#    version=origin/master
+
+[phing]
+    git=https://github.com/Xosofox/phing.git
+    target=/phing
     version=origin/master
 
 [MenuBundle]

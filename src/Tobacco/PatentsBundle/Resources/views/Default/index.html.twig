@@ -1,4 +1,7 @@
-Welcome to Tobacco Patents.
+{% extends '::base.html.twig' %}
+
+{% block body %}
+Welcome to Tobacco Patents (Doctrine Version)
 
 <h3>Search</h3>
 
@@ -11,3 +14,5 @@ Search for: <input size='80'>
 {% for c in categories %}
 <li><a href='{{ path('_patent_list', {'tags':c.tags}) }}'>{{ c.tags }} ({{ c.tag_count }})
 {% endfor %}
+
+{% endblock %}

@@ -1,3 +1,8 @@
+TobaccoPatpropBundle:
+    resource: "@TobaccoPatpropBundle/Controller/"
+    type:     annotation
+    prefix:   /propel
+
 TobaccoPatentsBundle:
     resource: "@TobaccoPatentsBundle/Controller/"
     type:     annotation

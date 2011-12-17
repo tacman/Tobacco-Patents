@@ -1,9 +1,9 @@
-Tobacco Patents, based on Symfony Standard Edition 2.0.7
+Tobacco Patents, based on Symfony Master Branch
 ========================
 
 Welcome to the Tobacco Patents, based on the Symfony Standard Edition (downloaded, not forked).
 
-1) Goal: Convert a simple database to Symfony / Doctrine
+1) Goal: Convert a simple database using both Doctrine and Propel
 --------------------------------
 
 This recipe shows the steps to convert a simple database to a Symfony2+Doctrine project.  Another recipe shows how to do this with Propel.  It starts with the Symfony Standard distro:
@@ -29,6 +29,7 @@ Add the following to your httpd.conf file (or however you set up sites in Apache
 
     <VirtualHost *:80>
     ServerName patents
+    ServerAlias patents.survoscookbook.com
     ServerAlias patents.localsite.us
     DocumentRoot /usr/sites/sf/patents/web
     </VirtualHost>
@@ -60,7 +61,7 @@ To see a real-live Symfony page in action, access the following page:
 
 * php app/console bundle:generate --namespace=Survos/PatentsBundle
 
-4) Create the Entities
+4) Create the Entities (Doctrine)
 
 * php app/console doctrine:mapping:convert yml ./src/Tobacco/PatentsBundle/Resources/config/doctrine/metadata/orm --from-database --force
 * php app/console doctrine:mapping:import TobaccoPatentsBundle annotation
@@ -75,6 +76,22 @@ To see a real-live Symfony page in action, access the following page:
 5) Create the Controllers and Views
 
  # app/src/Survos/PatentBundle/Controllers/ListController.php
+
+ 
+6) Create the Propel Schema from the current database
+
+* php app/console propel:reverse
+
+Now fix the 'abstract' problem (reserved word) and copy generated_schema.xml to the bundle /Resources/config/schema.xml.  Add the namespace:
+
+ <!-- app/src/Tobacco/PatentsBundle/Resource/config/schema.xml -->
+ <?xml version="1.0" encoding="UTF-8"?>
+ <database name="default" namespace="Tobacco\PatentsBundle\Model" defaultIdMethod="native">
+
+and generate the Model:
+
+* php app/console propel:build
+
 
 
 Enjoy!
