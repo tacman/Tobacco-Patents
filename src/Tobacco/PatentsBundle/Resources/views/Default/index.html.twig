@@ -2,9 +2,12 @@ Welcome to Tobacco Patents.
 
 <h3>Search</h3>
 
-<a href='{{ path('_patent_list') }}'>list the patents</a>, or search them.
-
 <form action='{{ path('_patent_search') }}'>
 Search for: <input size='80'>
 <input type='submit' value='Search'>
 </form>
+
+<h3>Or Choose a Category</h3>
+{% for c in categories %}
+<li><a href='{{ path('_patent_list', {'tags':c.tags}) }}'>{{ c.tags }} ({{ c.tag_count }})
+{% endfor %}
