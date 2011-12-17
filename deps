@@ -62,17 +62,17 @@
     version=v1.0.1
 
 [propel]
-    git=https://github.com/propelorm/Propel.git
+    git=http://github.com/propelorm/Propel.git
     target=/propel
 //    version=1.6.3
 
 [PropelBundle]
-    git=https://github.com/propelorm/PropelBundle.git
+    git=http://github.com/propelorm/PropelBundle.git
     target=/bundles/Propel/PropelBundle
 //    version=origin/master
 
 [phing]
-    git=https://github.com/Xosofox/phing.git
+    git=http://github.com/Xosofox/phing.git
     target=/phing
     version=origin/master
 
