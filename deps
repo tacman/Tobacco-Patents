@@ -84,3 +84,10 @@
     git=git://github.com/KnpLabs/KnpMenu.git
     target=/KnpMenu
 
+[Pagerfanta]
+    git=http://github.com/whiteoctober/Pagerfanta.git
+    target=/Pagerfanta
+
+[WhiteOctoberPagerfantaBundle]
+    git=http://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
+    target=bundles/WhiteOctober/PagerfantaBundle

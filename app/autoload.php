@@ -15,7 +15,9 @@ $loader->registerNamespaces(array(
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
-));
+   	'WhiteOctober' 		 => __DIR__.'/../vendor/bundles',
+    'Pagerfanta'       => __DIR__.'/../vendor/Pagerfanta/src',
+ ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
