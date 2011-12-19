@@ -84,9 +84,11 @@ To see a real-live Symfony page in action, access the following page:
 
 Now fix the 'abstract' problem (reserved word) and copy generated_schema.xml to the bundle /Resources/config/schema.xml.  Add the namespace:
 
- <!-- app/src/Tobacco/PatentsBundle/Resource/config/schema.xml -->
- <?xml version="1.0" encoding="UTF-8"?>
- <database name="default" namespace="Tobacco\PatentsBundle\Model" defaultIdMethod="native">
+````xml
+<!-- app/src/Tobacco/PatentsBundle/Resource/config/schema.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="Tobacco\PatentsBundle\Model" defaultIdMethod="native">
+````
 
 and generate the Model:
 
