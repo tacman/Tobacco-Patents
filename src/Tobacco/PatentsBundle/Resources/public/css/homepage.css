@@ -1,0 +1,101 @@
+/* htmlpage.css
+this is common to anything that uses htmlpage_class
+*/
+
+html { min-width: 600px; }
+
+body, div, td, th, h2, h3, h4 { /* redundant rules for bad browsers  */
+    font-family: verdana,sans-serif;
+/*	font-size:    x-small; */
+	voice-family: "\"}\"";
+	voice-family: inherit;
+/*  font-size: small; */
+	color: #333;
+}
+.clearhack { display: inline; } /*Clears Box Model Hack in IE5*/
+
+body {
+	background: #FFFFFF; /* gray: #EDEBE3; */
+	color: #000; /* lighter black: 333; */
+	padding: 1em 20px 3em 20px;
+	margin: 0;
+}
+
+a { color: #06C; }
+a:hover { color: #333; }
+a:active { color: #000; }
+
+tr { vertical-align: top; }
+
+h1,h2 {
+	font-family: trebuchet ms;
+	font-weight: bold;
+	color: #333;
+}
+
+h1 {
+	font-size: 180%;
+	margin: 0;
+}
+
+h1 a { text-decoration: none; color: #333; }
+h1 a:hover { border-bottom: 1px dotted #666; color: #000; }
+
+h2 {
+	font-size: 140%;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #CCC;
+	margin: 0;
+}
+
+p.note {
+	background: #EEE;
+	padding: 4px;
+	font-family: tahoma;
+	font-size: 85%;
+	line-height: 130%;
+	margin-top: 0;
+}
+
+#site_configuration {
+ 	background: #EEE;
+	padding: 4px;
+}
+
+.debug_notes {
+    clear: both;
+ 	background: #EFE;
+	padding: 4px;
+}
+
+div.float_clearer {
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    visibility: hidden;
+}
+
+.ui-icon {
+    display: inline-block !important;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 2px 4px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+img {
+    /* avoid border on linked images */
+    border-style: none;
+}

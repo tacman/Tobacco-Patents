@@ -1,0 +1,135 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #ffffff;
+	color: #333333;
+	font: 1em Verdana, Arial, sans-serif;
+	text-align: center;
+}
+
+#home #container {
+	text-align: left;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#footer {
+	margin: 20px;
+	padding: 10px 0;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	font-size: .6em;
+	line-height: 1.5em;
+	color: #999;
+}
+	#footer a { color: #666; }
+
+/* homepage */
+
+#home #banner {
+	text-align: center;
+	padding: 10px 0;
+}
+	#home #banner h1 {
+		font-size: 3em;
+		font-weight: normal;
+		color: #777;
+	}
+
+#home-search { text-align: center; }
+	#home-search fieldset { border: none; }
+	#home-search input#q {
+		font-size: 1.3em;
+		color: #555;
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	#home-search input#search-submit {
+		font-size: 1.2em;
+		padding: 5px 10px;
+		float: right;
+	}
+
+	#home-search #search-links {
+		font-size: .7em;
+		text-align: left;
+		margin-top: 5px;
+	}
+		#home-search #search-links,
+		#home-search #search-links a { color: #666; }
+
+/* search results */
+
+.crud-button {
+	font-weight: bold;
+	font-size: .8em;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	width: 125px;
+	padding: 5px 10px;
+	border: 2px solid #999;
+	background: #666;
+	color: white;
+}
+
+.listingheader {
+	height: 20px;
+	margin: 10px 0;
+	padding: 5px 12px;
+	background: #ddd;
+	border-top: 2px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+	.listingheader .listingtitle { float: left; color: #666; }
+	.listingheader .listingnav { text-align: right; font-weight: bold; font-size: 1em; }
+
+ul {
+	list-style: none outside;
+	line-height: 1.3em;
+	margin: 0;
+	padding: 0;
+}
+	li {
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid #ccc;
+	}
+
+
+/*
+fieldset.search {
+	border: none;
+	width: 243px;
+	margin: 0 auto;
+	background: #222;
+}
+.search input, .search button {
+	border: none;
+	float: left;
+}
+.search input.box {
+	color: #fff;
+	font-size: 1.2em;
+	width: 190px;
+	height: 30px;
+	padding: 8px 5px 0;
+	background: #616161 url(search_bg.gif) no-repeat;
+	margin-right: 5px;
+}
+.search input.box:focus {
+	background: #616161 url(search_bg.gif) no-repeat left -38px;
+	outline: none;
+}
+.search button.btn {
+	width: 38px;
+	height: 38px;
+	cursor: pointer;
+	text-indent: -9999px;
+	background: #fbc900 url(search_bg.gif) no-repeat top right;
+}
+.search button.btn:hover {
+	background: #fbc900 url(search_bg.gif) no-repeat bottom right;
+}
+*/
