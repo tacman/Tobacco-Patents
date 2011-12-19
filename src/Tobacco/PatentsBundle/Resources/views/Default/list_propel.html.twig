@@ -1,12 +1,21 @@
-Welcome to Tobacco Patents (Propel Listing)
+{% extends "TobaccoPatentsBundle::layout.html.twig" %}
 
-<h3>List</h3>
+{% block body %}
+Welcome to Tobacco Patents (Propel Listing, withPager)
 
+<h3>List {{ tags }}</h3>
+<i>{{ pager.getNbResults }} results, {{ pager.getNbPages }} pages.</i><br />
 {% for p in patents %}
 <li>{{ p.title }} / {{ p.tags }}
 {% endfor %}
+
+<div class="pagerfanta">
+    {{ pagerfanta( pager) }}
+</div>
 
 <form action='{{ path('_patent_search') }}'>
 Search for: <input size='80'>
 <input type='submit' value='Search'>
 </form>
+
+{% endblock %}

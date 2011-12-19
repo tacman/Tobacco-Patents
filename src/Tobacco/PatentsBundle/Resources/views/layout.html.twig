@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+				"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tobacco Patents</title>
+
+{#
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" type="text/css" media="all" />
+#}
+<link rel="stylesheet" type="text/css" href="{{ asset ('bundles/tobaccopatents/css/htmlpage.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset ('bundles/tobaccopatents/css/patents.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset ('bundles/tobaccopatents/css//homepage.css') }}" />
+<meta name="DC.Date" content="2011-12-18T21:20:28Z" />
+</head>
+
+<body id='home'>
+<div id='container'>
+
+<div id='banner'>
+	<h1>Tobacco Patents</h1>
+</div>
+
+<div id="home-search">
+	<form method="get" id="searchform" action="/patents.php">
+		<fieldset id="search">
+			<input name='q' id='q' type="text" value='' />
+			<input id='search-submit' type='submit' value='Search' />
+		</fieldset>
+	</form>
+</div>
+
+Fast, easy searches of tobacco-related patents.
+
+</div><!-- container -->
+
+<div style="clear: both;">
+{% block body %}
+{% endblock %}
+</div>
+
+	<div id="footer">
+    <p><strong>(c) Roswell Park Cancer Institute</strong><br />
+	 <br /></p>
+  </div>
+
+</body>
+</html>
