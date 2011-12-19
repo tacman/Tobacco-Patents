@@ -43,8 +43,8 @@ Congratulations! You're now ready to use Symfony. If you've unzipped Symfony
 in the web root of your computer, then you should be able to access the
 web version of the Symfony requirements check via:
 
-    http://patents.localsite.us/web/app_dev.php
-    http://patents.localsite.us/web/config.php
+    http://patents.localsite.us/app_dev.php
+    http://patents.localsite.us/config.php
 
 If everything looks good, click the "Bypass configuration and go to the Welcome page"
 link to load up your first Symfony page.
