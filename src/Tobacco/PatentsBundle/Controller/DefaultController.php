@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Tobacco\PatentsBundle\Model\PatentQuery;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\PropelAdapter;
 
 class DefaultController extends Controller
 {
@@ -37,10 +39,10 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/list/{tags}", name="_patent_list")
+     * @Route("/list/{tags}/{page}", name="_doctrine_patent_list")
      * @Template()
      */
-    public function listAction($tags='')
+    public function listAction($tags='', $page=1)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $patents = $em->getRepository('TobaccoPatentsBundle:Patent')->findBy(
@@ -68,12 +70,47 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/list_propel")
+     * @Route("/list_propel/{tags}/{page}", name="_patent_list", defaults={"page"=1})
      */
-    public function list_propelAction($tags='')
+    public function list_propelAction($tags='', $page=1)
     {
-    	  $patents = PatentQuery::create()->find();
-    	  return $this->render('TobaccoPatentsBundle:Default:list.html.twig', array('patents' => $patents));
+ 
+    	  $query = PatentQuery::create();
+    	  if ($tags) {
+    	  	$query->findByTags($tags);
+    	  }
+			  $adapter = new PropelAdapter($query);
+			  $request = $this->getRequest();
+			  $currentPage = $page; // $request->query->get('page'); // 
+
+$pagerfanta = new Pagerfanta($adapter);
+
+
+$pagerfanta->setMaxPerPage($maxPerPage=5); // 10 by default
+$pagerfanta->setCurrentPage($currentPage); // 1 by default
+/*
+$maxPerPage = $pagerfanta->getMaxPerPage();
+
+$currentPage = $pagerfanta->getCurrentPage();
+
+$nbResults = $pagerfanta->getNbResults();
+$currentPageResults = $pagerfanta->getCurrentPageResults();
+
+$pagerfanta->getNbPages();
+
+$pagerfanta->haveToPaginate(); // whether the number of results if higher than the max per page
+
+$pagerfanta->hasPreviousPage();
+$pagerfanta->getPreviousPage();
+$pagerfanta->hasNextPage();
+$pagerfanta->getNextPage();
+
+die();
+*/
+    	  return $this->render('TobaccoPatentsBundle:Default:list_propel.html.twig', array(
+    	  	'pager' => $pagerfanta,
+    	  	'tags' => $tags,
+    	  	'patents' => $currentPageResults = $pagerfanta->getCurrentPageResults() ));
     }
 
 }
