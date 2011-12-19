@@ -70,7 +70,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/list_propel/{tags}/{page}", name="_patent_list", defaults={"page"=1})
+     * @Route("/list_propel/{tags}/{page}", name="_patent_list", defaults={"tags"="","page"=1})
      */
     public function list_propelAction($tags='', $page=1)
     {
