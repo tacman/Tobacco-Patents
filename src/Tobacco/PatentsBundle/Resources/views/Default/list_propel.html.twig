@@ -7,7 +7,7 @@ Welcome to Tobacco Patents (Propel Listing, withPager)
 <i>{{ pager.getNbResults }} results, {{ pager.getNbPages }} pages.</i><br />
 <ul class="listing">
 {% for p in patents %}
-<li>{{ p.title }} / {{ p.tags }}</li>
+  {% include "TobaccoPatentsBundle:Default:patent_detail.html.twig" %}
 {% endfor %}
 </ul>
 

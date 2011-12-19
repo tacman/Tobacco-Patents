@@ -1,0 +1,20 @@
+<li><p><b>{{ p.title }}</b>
+<tt><a href="/patent/{{ p.patentId }}">{{ p.patentNumber }}</a></tt>
+</p>
+{# <p class="abstract">{{ p.abstract }}</p> #}
+<p class="dates">
+{% if p.dateFiled %}
+Filed: {{ p.dateFiled }}
+{% endif %}
+{% if p.patentDate %}
+Received: {{ p.patentDate }}
+{% endif %}
+</p>
+<p class="links">
+{% if p.patentOfficeUrl %}
+<a href="{{ p.patentOfficeUrl }}">Patent Office</a>
+{% endif %}
+{% if p.googleUrl %}
+<a href="{{ p.googleUrl }}">Google Patents</a>
+{% endif %}
+</p></li>
