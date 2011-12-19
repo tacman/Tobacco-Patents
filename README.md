@@ -69,13 +69,20 @@ To see a real-live Symfony page in action, access the following page:
 
 5) Associate the Entity with a repository by adding @ORM\Entity to
 
- #/app/src/Survos/Tobacco/PatentsBundle/Entity/Patent.php
+````php
+#/app/src/Survos/Tobacco/PatentsBundle/Entity/Patent.php
+
+/**
+ * Tobacco\PatentsBundle\Entity\Patent
+ *
  * @ORM\Table(name="patent")
  * @ORM\Entity(repositoryClass="Tobacco\PatentsBundle\Entity\Repository\PatentRepository")
+ */
+````
 
 5) Create the Controllers and Views
 
- # app/src/Survos/PatentBundle/Controllers/ListController.php
+    # app/src/Survos/PatentBundle/Controllers/ListController.php
 
  
 6) Create the Propel Schema from the current database
