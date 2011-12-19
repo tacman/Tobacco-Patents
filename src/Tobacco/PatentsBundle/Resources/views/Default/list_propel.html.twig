@@ -5,9 +5,11 @@ Welcome to Tobacco Patents (Propel Listing, withPager)
 
 <h3>List {{ tags }}</h3>
 <i>{{ pager.getNbResults }} results, {{ pager.getNbPages }} pages.</i><br />
+<ul class="listing">
 {% for p in patents %}
-<li>{{ p.title }} / {{ p.tags }}
+<li>{{ p.title }} / {{ p.tags }}</li>
 {% endfor %}
+</ul>
 
 <div class="pagerfanta">
     {{ pagerfanta( pager) }}
