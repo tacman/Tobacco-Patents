@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Tobacco\PatentsBundle\Model\PatentQuery;
+use Tobacco\PatentsBundle\Model\Patent;
+use Tobacco\PatentsBundle\Form\Type\PatentType;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\PropelAdapter;
 
@@ -117,4 +119,25 @@ die();
     	  	'patents' => $currentPageResults = $pagerfanta->getCurrentPageResults() ));
     }
 
+    /**
+     * @Route("/new", name="_patent_new")
+     */
+    function newAction() {
+        $patent = new Patent();
+        $form = $this->createForm(new PatentType(), $patent);
+
+        $request = $this->getRequest();
+        if ('POST' === $request->getMethod()) {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                $patent->save();
+                return $this->redirect($this->generateUrl('_patent_success'));
+            }
+        }
+
+        return $this->render('TobaccoPatentsBundle:Default:new.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
 }
