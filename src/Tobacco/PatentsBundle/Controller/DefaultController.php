@@ -81,6 +81,10 @@ class DefaultController extends Controller
     	  }
 			  $adapter = new PropelAdapter($query);
 			  $request = $this->getRequest();
+        $q = $request->query->get('q', '');
+        if ($q) {
+            $query->filterByTitle("%$q%")->_or()->filterByTerms("%$q%");
+        }
 			  $currentPage = $page; // $request->query->get('page'); // 
 
 $pagerfanta = new Pagerfanta($adapter);
