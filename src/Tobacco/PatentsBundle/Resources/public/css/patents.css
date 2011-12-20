@@ -37,6 +37,15 @@ body {
 		color: #777;
 	}
 
+#banner h2 {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    border: none;
+    color: #777;
+}
+
+
 #home-search { text-align: center; }
 	#home-search fieldset { border: none; }
 	#home-search input#q {
