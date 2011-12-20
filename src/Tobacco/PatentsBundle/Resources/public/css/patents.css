@@ -94,13 +94,14 @@ body {
 	.listingheader .listingtitle { float: left; color: #666; }
 	.listingheader .listingnav { text-align: right; font-weight: bold; font-size: 1em; }
 
-ul {
+ul.listing {
 	list-style: none outside;
 	line-height: 1.3em;
 	margin: 0;
 	padding: 0;
 }
-	li {
+
+ul.listing li {
 		margin-bottom: 10px;
 		padding-bottom: 10px;
 		border-bottom: 2px solid #ccc;
