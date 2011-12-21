@@ -42,6 +42,14 @@
 
 	<div id="footer">
     <p><strong>(c) Roswell Park Cancer Institute</strong><br />
+    {% if is_granted('ROLE_ADMIN') %}
+      {# IS_AUTHENTICATED_REMEMBERED | IS_AUTHENTICATED_ANONYMOUSLY | IS_AUTHENTICATED_FULLY #}
+      {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+      {% endif %}
+      <a href='{{ path('patent_admin') }}'>Admin Dashboard</a>
+    {% else %}
+      <a href='{{ path('patent_login') }}'>Admin Login</a>
+    {% endif %}
 	 <br /></p>
   </div>
 
