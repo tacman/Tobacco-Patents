@@ -165,7 +165,7 @@ die();
 
             if ($form->isValid()) {
                 $patent->save();
-                return $this->redirect($this->generateUrl('_patent_success'));
+                return $this->redirect($this->generateUrl('patent_success'));
             }
         }
 
@@ -173,4 +173,26 @@ die();
             'form' => $form->createView(),
         ));
     }
+
+    /**
+     * @Route("/admin/edit/{id}", requirements={"id" = "\d+"}, name="patent_edit")
+     */
+    function editAction(Patent $patent) {
+        $form = $this->createForm(new PatentType(), $patent);
+
+        $request = $this->getRequest();
+        if ('POST' === $request->getMethod()) {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                $patent->save();
+                return $this->redirect($this->generateUrl('patent_success'));
+            }
+        }
+
+        return $this->render('TobaccoPatentsBundle:Default:new.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
 }
