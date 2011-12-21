@@ -153,7 +153,7 @@ die();
     }
 
     /**
-     * @Route("/new", name="patent_new")
+     * @Route("/admin/new", name="patent_new")
      */
     function newAction() {
         $patent = new Patent();
