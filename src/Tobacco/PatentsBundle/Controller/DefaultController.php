@@ -25,7 +25,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/", name="_patent")
+     * @Route("/", name="patent_index")
      * @Template()
      */
     public function indexAction()
@@ -34,7 +34,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/categories", name="_patent_category")
+     * @Route("/categories", name="patent_category")
      * @Template()
      */
     public function categoriesAction()
@@ -43,7 +43,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/list/{tags}/{page}", name="_doctrine_patent_list")
+     * @Route("/list/{tags}/{page}", name="doctrine_patent_list")
      * @Template()
      */
     public function listAction($tags='', $page=1)
@@ -57,7 +57,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/search", name="_patent_search")
+     * @Route("/search", name="patent_search")
      * @Template()
      */
     public function searchAction()
@@ -74,7 +74,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/list_propel/{tags}/{page}", name="_patent_list", defaults={"tags"="","page"=1})
+     * @Route("/list_propel/{tags}/{page}", name="patent_list", defaults={"tags"="","page"=1})
      */
     public function list_propelAction($tags='', $page=1)
     {
@@ -153,7 +153,7 @@ die();
     }
 
     /**
-     * @Route("/new", name="_patent_new")
+     * @Route("/new", name="patent_new")
      */
     function newAction() {
         $patent = new Patent();

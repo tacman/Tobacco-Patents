@@ -6,7 +6,7 @@ Welcome to Tobacco Patents (Doctrine Version)
 <h3>Or Choose a Category</h3>
 <ul class="listing">
 {% for c in categories %}
-<li><a href='{{ path('_patent_list', {'tags':c.tags}) }}'>{{ c.tags }} ({{ c.tag_count }})</a></li>
+<li><a href='{{ path('patent_list', {'tags':c.tags}) }}'>{{ c.tags }} ({{ c.tag_count }})</a></li>
 {% endfor %}
 </ul>
 

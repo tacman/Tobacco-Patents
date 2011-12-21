@@ -5,10 +5,10 @@ Welcome to Tobacco Patents.
 <h3>Categories</h3>
 
 {% for c in categories %}
-<li><a href='{{ path('_patent_list', {'tags':c.tags}) }}'>{{ c.tags }} ({{ c.tag_count }})
+<li><a href='{{ path('patent_list', {'tags':c.tags}) }}'>{{ c.tags }} ({{ c.tag_count }})
 {% endfor %}
 
-<form action='{{ path('_patent_search') }}'>
+<form action='{{ path('patent_search') }}'>
 Search for: <input size='80'>
 <input type='submit' value='Search'>
 </form>
