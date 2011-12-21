@@ -3,7 +3,7 @@
 namespace Tobacco\PatentsBundle\Model;
 
 use Tobacco\PatentsBundle\Model\om\BasePatent;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Skeleton subclass for representing a row from the 'patent' table.
@@ -17,5 +17,10 @@ use Tobacco\PatentsBundle\Model\om\BasePatent;
  * @package    propel.generator.src.Tobacco.PatentsBundle.Model
  */
 class Patent extends BasePatent {
+
+    /**
+     * @Assert\NotBlank()
+     */
+    protected $patent_number;
 
 } // Patent
