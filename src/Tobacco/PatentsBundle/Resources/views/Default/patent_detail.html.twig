@@ -17,4 +17,7 @@ Received: {{ p.patentDate }}
 {% if p.googleUrl %}
 <a href="{{ p.googleUrl }}">Google Patents</a>
 {% endif %}
+{% if is_granted('ROLE_ADMIN') %}
+<a href="{{ path('patent_edit', { 'id': p.patentId }) }}">Edit</a>
+{% endif %}
 </p></li>
