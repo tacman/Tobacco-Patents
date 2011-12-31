@@ -21,6 +21,9 @@ class AppKernel extends Kernel
             new Tobacco\PatentsBundle\TobaccoPatentsBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Survos\Themes\SimpleSearchBundle\SurvosThemesSimpleSearchBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+#            new Survos\HengeBundle\SurvosHengeBundle(),
+#            new Survos\Themes\DreamBundle\ThemesDreamBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

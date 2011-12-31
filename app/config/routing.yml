@@ -1,12 +1,18 @@
+
 SurvosThemesSimpleSearchBundle:
     resource: "@SurvosThemesSimpleSearchBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /simple
 
 TobaccoPatentsBundle:
     resource: "@TobaccoPatentsBundle/Controller/"
     type:     annotation
     prefix:   /
+
+AcmeDemoBundle:
+    resource: "@AcmeDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /acme
 
 # Internal routing configuration to handle ESI
 #_internal:

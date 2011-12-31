@@ -4,6 +4,34 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ---------------------------------------------------------------------
+-- attendee
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `attendee`;
+
+CREATE TABLE `attendee`
+(
+	`event_id` int(10) unsigned NOT NULL,
+	PRIMARY KEY (`event_id`)
+) ENGINE=MyISAM;
+
+-- ---------------------------------------------------------------------
+-- post
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `post`;
+
+CREATE TABLE `post`
+(
+	`id` INTEGER NOT NULL AUTO_INCREMENT,
+	`title` VARCHAR(255) NOT NULL,
+	`content` TEXT,
+	`slug` VARCHAR(255),
+	PRIMARY KEY (`id`),
+	UNIQUE INDEX `post_slug` (`slug`(255))
+) ENGINE=MyISAM;
+
+-- ---------------------------------------------------------------------
 -- patent
 -- ---------------------------------------------------------------------
 
