@@ -1,0 +1,14 @@
+{% extends "TobaccoPatentsBundle::admin_layout.html.twig" %}
+
+{% block body %}
+Welcome to Tobacco Patents Administration
+
+<h3>Choose a Category</h3>
+<ul class="listing">
+{% for c in categories %}
+<li><a href='{{ path('patent_list', {'tags':c.tags}) }}'>{{ c.tags }} ({{ c.tag_count }})</a></li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

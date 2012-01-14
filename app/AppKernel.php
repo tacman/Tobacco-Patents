@@ -20,7 +20,13 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Tobacco\PatentsBundle\TobaccoPatentsBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+
             new Survos\Themes\SimpleSearchBundle\SurvosThemesSimpleSearchBundle(),
+            new Survos\Common\ThemesBundle\SurvosThemesBundle(),
+            new Survos\Common\CrudBundle\SurvosCrudBundle(),
+#            new Survos\AdminBundle\SurvosAdminBundle(),
+
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 #            new Survos\HengeBundle\SurvosHengeBundle(),
 #            new Survos\Themes\DreamBundle\ThemesDreamBundle(),

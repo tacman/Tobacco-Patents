@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<database name="default" namespace="Acme\DemoBundle\Model" defaultIdMethod="native">
+
+  <table name="attendee" phpName="Attendee" idMethod="native">
+    <column name="event_id" phpName="EventId" type="INTEGER" size="10" sqlType="int(10) unsigned" primaryKey="true" required="true"/>
+  </table>
+
+<table name="post" phpName="Post" idMethod="native">
+  <column name="id" required="true" primaryKey="true" autoIncrement="true" type="INTEGER" />
+  <column name="title" type="VARCHAR" required="true" primaryString="true" />
+  <column name="content" type="LONGVARCHAR"/>
+  <behavior name="sluggable">
+    <parameter name="slug_pattern" value="/posts/{title}" />
+  </behavior>
+</table>
+</database>
