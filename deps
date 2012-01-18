@@ -1,6 +1,6 @@
-[SurvosCommonBundles]
+[SurvosCommon]
     git=git@github.com:Survos/Common.git
-    target=/bundles/Survos/Common
+    target=/Survos
 
 [FOSUserBundle]
     git=git://github.com/FriendsOfSymfony/FOSUserBundle.git

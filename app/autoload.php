@@ -7,7 +7,7 @@ $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     'Symfony'          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
 #    'Survos'           => '/usr/sites/sf/Survos/bundles',
-    'Survos\\Common'   => __DIR__.'/../vendor/bundles',
+    'Survos'   => __DIR__.'/../vendor',
     'Sensio'           => __DIR__.'/../vendor/bundles',
     'JMS'              => __DIR__.'/../vendor/bundles',
     'Doctrine\\Common' => __DIR__.'/../vendor/doctrine-common/lib',

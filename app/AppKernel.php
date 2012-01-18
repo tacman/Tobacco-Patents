@@ -23,8 +23,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
 
             new Survos\Themes\SimpleSearchBundle\SurvosThemesSimpleSearchBundle(),
-            new Survos\Common\ThemesBundle\SurvosThemesBundle(),
-            new Survos\Common\CrudBundle\SurvosCrudBundle(),
+            new Survos\ThemesBundle\SurvosThemesBundle(),
+            new Survos\CrudBundle\SurvosCrudBundle(),
 #            new Survos\AdminBundle\SurvosAdminBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
