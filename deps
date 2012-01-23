@@ -99,3 +99,7 @@
 [WhiteOctoberPagerfantaBundle]
     git=http://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
     target=bundles/WhiteOctober/PagerfantaBundle
+
+[FOSJsRoutingBundle]
+    git=git@github.com:Survos/FOSJsRoutingBundle.git
+    target=bundles/FOS/JsRoutingBundle

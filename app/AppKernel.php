@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Tobacco\PatentsBundle\TobaccoPatentsBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             new Survos\Themes\SimpleSearchBundle\SurvosThemesSimpleSearchBundle(),
             new Survos\ThemesBundle\SurvosThemesBundle(),
