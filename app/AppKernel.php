@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 #            new Survos\HengeBundle\SurvosHengeBundle(),
 #            new Survos\Themes\DreamBundle\ThemesDreamBundle(),
+            new Survos\AssetsBundle\SurvosAssetsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
